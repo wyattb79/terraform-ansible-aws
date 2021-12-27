@@ -3,4 +3,7 @@ resource "aws_vpc" "ansible-vpc" {
   enable_dns_hostnames = true
   enable_dns_support = true
   id = "ansible-vpc"
+  tags {
+    Name = "ansible-vpc"
+  }
 }
