@@ -1,6 +1,6 @@
 resource "aws_security_group_rule" "allow-ssh-from-cluster" {
 
-  type = ingress
+  type = "ingress"
   from_port = 22 
   to_port = 22
   protocol = "tcp"
