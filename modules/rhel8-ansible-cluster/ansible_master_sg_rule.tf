@@ -1,4 +1,4 @@
-resource "aws_security_group" "ansible-master-sg-rule" {
+resource "aws_security_group_rule" "ansible-master-sg-rule" {
   type = "ingress"
   from_port = 0
   to_port = 0
