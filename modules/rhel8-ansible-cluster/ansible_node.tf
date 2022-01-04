@@ -6,6 +6,8 @@ resource "aws_instance" "ansible_node" {
 
   vpc_security_group_ids = [ "${aws_security_group.ansible-node-sg.id}" ]
 
+  subnet_id = "${aws_subnet.ansible-subnet.id}"
+  
   tags = {
     Name = "AnsibleNode"
   }
