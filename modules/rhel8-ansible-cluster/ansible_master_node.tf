@@ -4,7 +4,7 @@ resource "aws_instance" "ansible_master" {
   key_name = var.key_name
   user_data = "${file("ansible-master-setup.sh")}"
 
-  security_groups = [ "${aws_security_group.ansible-master-sg.id}" ]
+  vpc_security_group_ids = [ "${aws_security_group.ansible-master-sg.id}" ]
 
   tags = {
     Name = "AnsibleMaster"
