@@ -4,8 +4,10 @@ resource "aws_instance" "ansible_node" {
   key_name = var.key_name
   user_data = file("ansible-node-setup.sh")
 
-  security_groups = [ "${aws_security_group.ansible-master-sg.id}" ]
+  vpc_security_group_ids = [ "${aws_security_group.ansible-node-sg.id}" ]
 
+  subnet_id = "${aws_subnet.ansible-subnet.id}"
+  
   tags = {
     Name = "AnsibleNode"
   }
